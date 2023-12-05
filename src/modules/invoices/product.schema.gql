@@ -1,0 +1,19 @@
+type Query {
+    invoices: Invoice[]
+    invoice(id: ID): Invoice
+    invoiceType(status: Boolean): [Invoice]
+
+type Invoice {
+    _id: String
+    fullname: String
+    email: String
+    dueData: String
+    term: String
+    description: String
+    price: Float
+    status: Boolean
+}
+
+type Mutation {
+    addInvoice(data: invoiceType!): Invoice
+}
